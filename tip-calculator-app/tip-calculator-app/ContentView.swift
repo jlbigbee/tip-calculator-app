@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var total = ""
+    @State var tipPercent = 15.0
     var body: some View {
         VStack {
             HStack {
@@ -27,6 +28,11 @@ struct ContentView: View {
                 Text("S")
                 TextField("Amount", text: $total)
                 
+            }
+            HStack{
+                Slider(value: $tipPercent, in: 1...30, step: 1.0)
+                Text("\(Int(tipPercent))")
+                Text("%")
             }
         }
         .padding()
