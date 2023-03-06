@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var total = ""
+    @State var total = "100"
     @State var tipPercent = 15.0
     var body: some View {
         VStack {
@@ -34,6 +34,7 @@ struct ContentView: View {
                 Text("\(Int(tipPercent))")
                 Text("%")
             }
+            Text("Tip Amount: $\(Double(total)! * tipPercent/100, specifier: "%0.2f")")
         }
         .padding()
         
