@@ -17,11 +17,11 @@ struct ContentView: View {
                     .imageScale(.large)
                     .foregroundColor(.accentColor)
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    
+                
                 Text("Tip Calculator")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-                    
+                
             }
             .padding()
             HStack{
@@ -34,7 +34,11 @@ struct ContentView: View {
                 Text("\(Int(tipPercent))")
                 Text("%")
             }
-            Text("Tip Amount: $\(Double(total)! * tipPercent/100, specifier: "%0.2f")")
+            if let totalNumber = Double(total) {
+                Text("Tip Amount: $\(totalNumber * tipPercent/100, specifier: "%0.2f")")
+            } else {
+                Text("Please enter a numeric value")
+            }
         }
         .padding()
         
