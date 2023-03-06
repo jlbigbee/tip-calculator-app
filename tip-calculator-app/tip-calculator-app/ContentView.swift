@@ -10,10 +10,16 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "dollarsign.circle.fill")
-                .imageScale(.large)
+            HStack {
+                Image(systemName: "dollarsign.circle.fill")
+                    .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Tip Calculator")
+                Text("Tip Calculator")
+            }
+            HStack{
+                Text("S")
+                Text("[Amount]")
+            }
         }
         .padding()
     }
